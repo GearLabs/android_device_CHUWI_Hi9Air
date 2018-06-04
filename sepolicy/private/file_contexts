@@ -1,0 +1,5 @@
+# Files in rootfs
+/nvcfg(/.*)?             u:object_r:nvcfg_file:s0
+/nvdata(/.*)?            u:object_r:nvdata_file:s0
+/protect_f(/.*)?         u:object_r:protect_f_data_file:s0
+/protect_s(/.*)?         u:object_r:protect_f_data_file:s0

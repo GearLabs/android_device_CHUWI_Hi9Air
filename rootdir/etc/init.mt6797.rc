@@ -1,0 +1,98 @@
+import /vendor/etc/init/hw/init.aee.rc
+import /vendor/etc/init/trustonic.rc
+import ${ro.mtkrc.path}meta_init.connectivity.rc
+import /vendor/etc/init/hw/meta_init.project.rc
+import /vendor/etc/init/microtrust.rc
+#Make sure meta_init.modem.rc is the last rc file.
+import ${ro.mtkrc.path}meta_init.modem.rc
+
+on early-init
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+
+on init
+    # HACK to disable forced encryption
+    mount none /fstab.mt6797 /vendor/etc/fstab.mt6797 bind
+
+    mkdir /protect_f 0771 system system
+    mkdir /protect_s 0771 system system
+    symlink /sdcard /mnt/sdcard
+    #Create nvdata mount point
+    mkdir /nvdata 0771 system system
+    mkdir /nvcfg 0771 system system
+
+    #Create CIP mount point
+    mkdir /custom
+
+    mkdir /mnt/cd-rom 0000 system system
+
+on fs
+    write /proc/bootprof "INIT:Mount_START"
+    mount_all /vendor/etc/fstab.mt6797 ${ro.mtkrc.path}multi_init.rc
+    write /proc/bootprof "INIT:Mount_END"
+
+on post-fs
+    chown system system /protect_f
+    chmod 0770 /protect_f
+
+    chown system system /protect_s
+    chmod 0770 /protect_s
+
+    chown system system /nvcfg
+    chmod 0771 /nvcfg
+    restorecon_recursive /nvcfg
+
+on post-fs-data
+    # WiFi
+    mkdir /data/misc/wifi 0770 system wifi
+    mkdir /data/misc/wifi/sockets 0770 system wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+    #give system access to rfkill device node
+    chmod 0660 /dev/rfkill
+
+    # RTC
+    mkdir /data/misc/rtc 0770 system system
+
+    # Android SEC related device nodes
+    chmod 0660 /dev/sec
+    chown root system /dev/sec
+
+    #change partition permission
+    exec /vendor/etc/partition_permission.sh
+
+    chmod 0666 /dev/exm0
+
+on boot
+    class_start default
+
+service meta_tst /system/bin/meta_tst
+
+service nvram_daemon /vendor/bin/nvram_daemon
+    class main
+    user root
+    group system
+    oneshot
+
+
+#adb,acm
+on property:ro.boot.usbconfig=0
+    write /sys/class/android_usb/android0/iSerial $ro.serialno
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 0e8d
+    write /sys/class/android_usb/android0/idProduct 200E
+    write /sys/class/android_usb/android0/f_acm/instances 1
+    write /sys/class/android_usb/android0/functions adb,acm
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+
+#acm
+on property:ro.boot.usbconfig=1
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/iSerial " "
+    write /sys/class/android_usb/android0/idVendor 0e8d
+    write /sys/class/android_usb/android0/idProduct 2007
+    write /sys/class/android_usb/android0/f_acm/instances 1
+    write /sys/class/android_usb/android0/functions acm
+    write /sys/class/android_usb/android0/bDeviceClass 02
+    write /sys/class/android_usb/android0/enable 1
