@@ -1,0 +1,6 @@
+ro.product.brand=CHUWI
+ro.product.name=Hi9Air
+ro.product.device=Hi9Air
+ro.product.mod_device=Hi9Air
+ro.build.product=Hi9Air
+ro.treble.enabled=true

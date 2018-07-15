@@ -1,0 +1,2 @@
+add_lunch_combo omni_Hi9Air-eng
+add_lunch_combo omni_Hi9Air-userdebug
