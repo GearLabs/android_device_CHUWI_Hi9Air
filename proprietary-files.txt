@@ -64,6 +64,37 @@ lib64/libterservice.so
 lib64/libui_ext_fwk.so
 lib/libui_ext_fwk.so
 
+lib64/vendor.mediatek.hardware.pq@2.0.so
+lib/vendor.mediatek.hardware.pq@2.0.so
+lib64/vendor.mediatek.hardware.radio@1.1.so
+
+# Audio
+lib64/vendor.mediatek.hardware.audio@2.1.so
+lib/vendor.mediatek.hardware.audio@2.1.so
+
+# Camera
+lib/vendor.mediatek.hardware.camera.ccap@1.0.so
+lib64/vendor.mediatek.hardware.camera.device@1.1.so
+lib/vendor.mediatek.hardware.camera.device@1.1.so
+lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
+lib/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
+
+# GPS
+lib64/vendor.mediatek.hardware.gnss@1.1.so
+lib/vendor.mediatek.hardware.gnss@1.1.so
+
+# Keymaster
+lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
+lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
+
+# NVRAM
+lib64/vendor.mediatek.hardware.nvram@1.0.so
+lib/vendor.mediatek.hardware.nvram@1.0.so
+
+# Power
+lib64/vendor.mediatek.hardware.power@1.1.so
+lib/vendor.mediatek.hardware.power@1.1.so
+
 # Kernel Power Off Charging (KPOC)
 etc/init/kpoc_charger.rc
 
@@ -92,6 +123,8 @@ lib/libimsma_rtp.so
 lib64/libimsma_socketwrapper.so
 lib/libimsma_socketwrapper.so
 lib/libmtk_vt_service.so
+lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+lib/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # IMS dependencies
 lib64/libion.so
