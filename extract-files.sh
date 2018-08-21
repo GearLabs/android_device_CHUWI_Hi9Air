@@ -3,8 +3,8 @@
 
 set -e
 
-DEVICE=shift6m
-VENDOR=shift
+DEVICE=Hi9Air
+VENDOR=CHUWI
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -26,14 +26,14 @@ while [ "$1" != "" ]; do
     case $1 in
         -n | --no-cleanup )     CLEAN_VENDOR=false
                                 ;;
-        -s | --section )        shift
+        -s | --section )        CHUWI
                                 SECTION=$1
                                 CLEAN_VENDOR=false
                                 ;;
         * )                     SRC=$1
                                 ;;
     esac
-    shift
+    CHUWI
 done
 
 if [ -z "$SRC" ]; then

@@ -35,73 +35,7 @@
          some range of adjustment to dim the screen further than usual in very
          dark rooms. The contents of the screen must still be clearly visible
          in darkness (although they may not be visible in a bright room). -->
-    <integer name="config_screenBrightnessDark">10</integer>
-
-    <!-- Flag indicating whether we should enable the automatic brightness in Settings.
-         Software implementation will be used if config_hardware_auto_brightness_available is not set -->
-    <bool name="config_automatic_brightness_available">true</bool>
-
-    <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
-         The N entries of this array define N + 1 control points as follows:
-         (1-based arrays)
-
-         Point 1:            (0, value[1]):             lux <= 0
-         Point 2:     (level[1], value[2]):  0        < lux <= level[1]
-         Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
-         ...
-         Point N+1: (level[N], value[N+1]):  level[N] < lux
-
-         The control points must be strictly increasing.  Each control point
-         corresponds to an entry in the brightness backlight values arrays.
-         For example, if LUX == level[1] (first element of the levels array)
-         then the brightness will be determined by value[2] (second element
-         of the brightness values array).
-
-         Spline interpolation is used to determine the auto-brightness
-         backlight values for LUX levels between these control points.
-
-         Must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLevels">
-        <item>20</item>
-        <item>50</item>
-        <item>150</item>
-        <item>300</item>
-        <item>600</item>
-        <item>800</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>3000</item>
-        <item>3500</item>
-        <item>5500</item>
-        <item>8000</item>
-        <item>12000</item>
-        <item>25000</item>
-        <item>40000</item>
-    </integer-array>
-
-    <!-- Array of output values for LCD backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         The brightness values must be between 0 and 255 and be non-decreasing.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>10</item>
-        <item>25</item>
-        <item>40</item>
-        <item>90</item>
-        <item>90</item>
-        <item>90</item>
-        <item>90</item>
-        <item>90</item>
-        <item>155</item>
-        <item>190</item>
-        <item>190</item>
-        <item>190</item>
-        <item>190</item>
-        <item>190</item>
-        <item>255</item>
-        <item>255</item>
-    </integer-array>
+    <integer name="config_screenBrightnessDark">1</integer>
 
     <string-array name="config_mobile_tcp_buffers">
         <item>lte:524288,1048576,2097152,262144,524288,1048576</item>
@@ -137,9 +71,6 @@
 
     <!-- True if camera app should be pinned via Pinner Service -->
     <bool name="config_pinnerCameraApp">true</bool>
-
-    <!-- If true, the display will be shifted around in ambient mode. -->
-    <bool name="config_enableBurnInProtection">true</bool>
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>

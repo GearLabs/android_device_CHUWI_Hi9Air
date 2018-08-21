@@ -147,10 +147,3 @@ lib/libSonyIMX230PdafLibrary.so
 # Power
 lib64/vendor.mediatek.hardware.power@1.1.so
 lib/vendor.mediatek.hardware.power@1.1.so
-
-# NFC
-etc/libnfc-brcm.conf
-etc/libnfc-nxp.conf
-etc/permissions/com.nxp.nfc.xml
-lib64/vendor.nxp.nxpnfc@1.0.so
-lib/vendor.nxp.nxpnfc@1.0.so

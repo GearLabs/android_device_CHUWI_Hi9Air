@@ -1,9 +1,8 @@
-Common device configuration for the SHIFT 6M.
+Common device configuration for the CHUWI Hi9Air.
 
 TODO:
 
  *) https://review.lineageos.org/#/c/LineageOS/android_device_lineage_sepolicy/+/224447
- *) Fix inline kernel build, right now it resets at splash screen
  *) Investigate stock MTK RIL jars, likely needed for IMS/VT
 
 ---

@@ -1,6 +1,6 @@
 # Copyright (C) 2018 The LineageOS Project
 
-DEVICE_PATH := device/shift/shift6m
+DEVICE_PATH := device/CHUWI/Hi9Air
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6797
@@ -22,8 +22,8 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-#TARGET_KERNEL_SOURCE := kernel/shift/shift6m
-#TARGET_KERNEL_CONFIG := SHIFT6m_defconfig
+#TARGET_KERNEL_SOURCE := kernel/CHUWI/Hi9Air
+#TARGET_KERNEL_CONFIG := Hi9Air_defconfig
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/kernel
 
 # Boot image
@@ -36,7 +36,7 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x04f88000 -
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_DTBOIMG_PARTITION_SIZE := 536870912
+#BOARD_DTBOIMG_PARTITION_SIZE := 536870912
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2684354560
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 54374940160
 BOARD_FLASH_BLOCK_SIZE := 4096
@@ -51,10 +51,10 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Recovery
-BOARD_USES_RECOVERY_AS_BOOT := true
-TARGET_NO_RECOVERY := true
+#BOARD_USES_RECOVERY_AS_BOOT := true
+#TARGET_NO_RECOVERY := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6797
-LZMA_RAMDISK_TARGETS := recovery
+#LZMA_RAMDISK_TARGETS := recovery
 
 # Treble
 BOARD_VNDK_RUNTIME_DISABLE := true
@@ -89,4 +89,4 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib64/vndk-compat/libstagefright_omx.so|/system/lib64/libstagefright_omx_shim.so
 
 # Inherit from the proprietary version
--include vendor/shift/shift6m/BoardConfigVendor.mk
+-include vendor/CHUWI/Hi9Air/BoardConfigVendor.mk

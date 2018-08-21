@@ -3,8 +3,8 @@
 
 set -e
 
-DEVICE=shift6m
-VENDOR=shift
+DEVICE=Hi9Air
+VENDOR=CHUWI
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

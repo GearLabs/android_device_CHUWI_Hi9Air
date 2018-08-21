@@ -2,7 +2,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),shift6m)
+ifeq ($(TARGET_DEVICE),Hi9Air)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

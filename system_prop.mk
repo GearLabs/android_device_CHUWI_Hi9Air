@@ -61,7 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.zio=38,108,105,16
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=420
+    ro.sf.lcd_density=320
 
 # Enable Virtual Display for hwc
 PRODUCT_PROPERTY_OVERRIDES += \
