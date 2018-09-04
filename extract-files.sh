@@ -26,14 +26,14 @@ while [ "$1" != "" ]; do
     case $1 in
         -n | --no-cleanup )     CLEAN_VENDOR=false
                                 ;;
-        -s | --section )        CHUWI
+        -s | --section )        shift
                                 SECTION=$1
                                 CLEAN_VENDOR=false
                                 ;;
         * )                     SRC=$1
                                 ;;
     esac
-    CHUWI
+    shift
 done
 
 if [ -z "$SRC" ]; then
