@@ -1,5 +1,5 @@
-bin/em_svr
-etc/init/em_svr.rc
+#bin/em_svr
+#etc/init/em_svr.rc
 lib64/libem_audio_jni.so
 lib/libem_audio_jni.so
 lib64/libem_bt_jni.so
@@ -29,7 +29,7 @@ lib64/libprogrambinary.so
 lib/libprogrambinary.so
 
 bin/atcid
-bin/atci_service
+#bin/atci_service
 bin/audiocmdservice_atci
 bin/kpoc_charger
 bin/md_monitor
@@ -39,7 +39,7 @@ bin/terservice
 bin/thermalindicator
 
 etc/init/atcid.rc
-etc/init/atci_service.rc
+#etc/init/atci_service.rc
 etc/init/audiocmdservice_atci.rc
 etc/init/md_monitor.rc
 etc/init/program_binary_service.rc
@@ -56,7 +56,7 @@ etc/permissions/privapp-permissions-mediatek.xml
 
 etc/tee.img
 
-lib64/libcurl.so
+#lib64/libcurl.so
 lib/libcurl.so
 
 lib64/libterservice.so
@@ -73,7 +73,7 @@ lib64/vendor.mediatek.hardware.audio@2.1.so
 lib/vendor.mediatek.hardware.audio@2.1.so
 
 # Camera
-lib/vendor.mediatek.hardware.camera.ccap@1.0.so
+#lib/vendor.mediatek.hardware.camera.ccap@1.0.so
 lib64/vendor.mediatek.hardware.camera.device@1.1.so
 lib/vendor.mediatek.hardware.camera.device@1.1.so
 lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
@@ -114,13 +114,13 @@ lib/libgralloc_extra_sys.so
 
 # IMS/VT - FIXME
 #bin/vtservice
-lib64/libimsma.so
+#lib64/libimsma.so
 lib/libimsma.so
-lib64/libimsma_adapt.so
+#lib64/libimsma_adapt.so
 lib/libimsma_adapt.so
-lib64/libimsma_rtp.so
+#lib64/libimsma_rtp.so
 lib/libimsma_rtp.so
-lib64/libimsma_socketwrapper.so
+#lib64/libimsma_socketwrapper.so
 lib/libimsma_socketwrapper.so
 lib/libmtk_vt_service.so
 lib64/vendor.mediatek.hardware.videotelephony@1.0.so
@@ -129,20 +129,20 @@ lib/vendor.mediatek.hardware.videotelephony@1.0.so
 # IMS dependencies
 lib64/libion.so
 lib/libion.so
-lib64/libcomutils.so
+#lib64/libcomutils.so
 lib/libcomutils.so
-lib64/libsignal.so
+#lib64/libsignal.so
 lib/libsignal.so
-lib64/libsink.so
+#lib64/libsink.so
 lib/libsink.so
-lib64/libsource.so
+#lib64/libsource.so
 lib/libsource.so
 lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 lib/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # Camera Phase Detection Auto Focus (PDAF)
-lib64/libSonyIMX230PdafLibrary.so
-lib/libSonyIMX230PdafLibrary.so
+#lib64/libSonyIMX230PdafLibrary.so
+#lib/libSonyIMX230PdafLibrary.so
 
 # Power
 lib64/vendor.mediatek.hardware.power@1.1.so
