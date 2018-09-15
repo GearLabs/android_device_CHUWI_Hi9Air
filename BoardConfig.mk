@@ -89,6 +89,7 @@ TW_NO_EXFAT_FUSE := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_INCLUDE_CRYPTO := true
 TW_EXCLUDE_SUPERSU := true
+TW_EXCLUDE_TWRPAPP := true
 TW_MAX_BRIGHTNESS := 255
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/battery/power_supply/battery"
